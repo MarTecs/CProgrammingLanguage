@@ -4,7 +4,6 @@
 	
 	程序有点小问题 
 */ 
-
 #include<stdio.h>
 #define MAX_NUM 5
 int main()
@@ -22,7 +21,7 @@ int main()
 	for( i = 0; i < MAX_NUM; i++ )
 	{
 		min = an[i];
-		for( j = i; j < MAX_NUM; j++ )
+		for( j = i + 1; j < MAX_NUM; j++ )
 		{
 			if( an[j] < min )
 			{
@@ -31,7 +30,6 @@ int main()
 				min = an[j];
 			}
 		}
-		
 		/*交换找到的最小的元素和该位置的元素*/
 		temp = an[i];
 		an[i] = min;
