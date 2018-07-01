@@ -55,9 +55,28 @@ void selectionSort(int *num)
 		*(num+i) = *(num+min);
 		*(num+min) = temp;
 	}
-	
-	
-	
+}
+
+
+/**
+	@brief:Ã°ÅİÅÅĞò
+	@param:Êı×éÖ¸Õë 
+**/
+void bubbledSort(int *num)
+{
+	int i,j,min;
+	for(i = 0; i < MAX_NUM; i++)
+	{
+		for(j = i; j < MAX_NUM - 1; j++)
+		{
+			if(*(num + j) > *(num + j + 1))
+			{
+				min = *(num + j + 1);
+				*(num + j + 1) = *(num + j);
+				*(num + j) = min;
+			}
+		}
+	}
 }
 
 int main()
