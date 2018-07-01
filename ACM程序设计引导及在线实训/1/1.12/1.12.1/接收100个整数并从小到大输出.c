@@ -1,44 +1,87 @@
-/*
-	接收100个整数，并从小到大输出 
-	采用选择排序：首先从N个数找到最小放到第1个，然后从N-1个数找到最小放到第1个，以此类推 
-	
-	程序有点小问题 
-*/ 
 #include<stdio.h>
-#define MAX_NUM 5
-int main()
+#define MAX_NUM 100
+
+/*输出数组*/ 
+void printArray(int *n)
 {
-	//index为找到的最小元素在数组中的下标,min为最小的那个数，temp为临时存放数而建立 
-	int i,j,temp,min,index;
-	int an[MAX_NUM];
-	
-	//输入100个整数 
-	for( i = 0; i < MAX_NUM; i++ )
-		scanf("%d", &an[i]);
-	
-	
-	//进行选择排序 
+	int i;
 	for( i = 0; i < MAX_NUM; i++ )
 	{
+		printf("%d\t", *(n + i));
+	}
+	printf("\n");
+}
+
+/*输入数组*/
+void scanArray(int *n)
+{
+	int i;
+	for (i = 0; i < MAX_NUM; i++)
+	{
+		scanf("%d",&(*(n+i)));
+	}
+}
+
+int main()
+{
+	int an[MAX_NUM];
+	scanArray(an);
+	
+	int i,j,temp,index,min;			//min存放每次循环最小的数，temp存放临时数字，index存放最小的数对应的索引 
+	for(i = 0; i < MAX_NUM; i++)
+	{
+		
 		min = an[i];
-		for( j = i + 1; j < MAX_NUM; j++ )
+		index = i;				//之前的问题就是这里没有初始化的问题 
+		printArray(an);
+
+		printf("min：%d\t", min);
+
+		for(j = i + 1; j < MAX_NUM; j++)
 		{
-			if( an[j] < min )
+			if(min > an[j])
 			{
-				
-				index = j;
 				min = an[j];
-			}
+				index = j;	
+			}	
 		}
-		/*交换找到的最小的元素和该位置的元素*/
+		
+		/*
+		min = i;
+		printArray(an);
+
+		printf("1min：%d\t", min);
+
+		for(j = i + 1; j < MAX_NUM; j++)
+		{
+			if(an[min] > an[j])
+			{
+				min = j;
+			}	
+		}
+		
+		temp = an[i];
+		an[i] = an[min];
+		an[min] = temp;	
+		printf("min：%d\t", min);
+		
+		
+		printArray(an);
+		
+		*/
+		
+		printf("min：%d\t", min);
 		temp = an[i];
 		an[i] = min;
 		an[index] = temp;
-	}
 		
+		printArray(an);
+
+			
+	} 
 	
-	for( i = 0; i < MAX_NUM; i++ )
-		printf("%d\t", an[i]);
 	
-	return 0;
-}
+	printArray(an);
+} 
+
+
