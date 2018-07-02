@@ -20,7 +20,7 @@ int main()
 		printf( szResponse);
 	}
 	szTitle [0] = 't';
-	szTitle [3] = 0; //等效于 szTitle [3] = ‘\0’;
+	szTitle [3] = 0; //等效于 szTitle [3] = ‘\0’; 因为C/C++在处理字符串时认为遇到\0就会就认为字符串结束了，因此将会输出tri 
 	printf(szTitle);
 	return 0;
  } 
