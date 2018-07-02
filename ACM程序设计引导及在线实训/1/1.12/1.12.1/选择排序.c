@@ -65,9 +65,10 @@ void selectionSort(int *num)
 void bubbledSort(int *num)
 {
 	int i,j,min;
-	for(i = 0; i < MAX_NUM; i++)
+	for(i = 0; i < MAX_NUM - 1; i++)
 	{
-		for(j = i; j < MAX_NUM - 1; j++)
+		for(j = 0; j < MAX_NUM - 1 - i; j++)			
+		//这里需要注意是每次都会把最大放到最后，所以每次只需要管前面的就可以 
 		{
 			if(*(num + j) > *(num + j + 1))
 			{
@@ -76,6 +77,7 @@ void bubbledSort(int *num)
 				*(num + j) = min;
 			}
 		}
+		printArray(num);
 	}
 }
 
@@ -83,9 +85,7 @@ int main()
 {
 	int num[MAX_NUM];
 	scanArray(num);
-	selectionSort(num);
+	bubbledSort(num);
 	printArray(num);
 	return 0;
-	
-	
  } 
