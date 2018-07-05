@@ -1,4 +1,9 @@
 #include <stdio.h>
+
+/*由于第一次没有包含下面这个math.h文件导致Wrong Answer，第二次加上这句话直接AC*/
+#include <math.h>
+
+
 int main()
 {
     int n,num,i;
