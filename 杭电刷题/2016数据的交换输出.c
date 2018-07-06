@@ -7,17 +7,16 @@ int main()
         temp = 0;
         if(n == 0)
             break;
-        int num[n];
-        for(i = 0; i < n; i++)
+        int num[100];
+        for(i = 0,min = num[0]; i < n; i++)
         {
             scanf("%d",&num[i]);
-            if(i == 0)
-                min = num[0];
             if(min > num[i])
             {
                 min = num[i];
                 temp = i;
             }
+            printf("%d\t",i);
         }
         num[temp] = num[0];
         num[0] = min;
