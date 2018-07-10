@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <string.h> //因为用到了strlen()
 int main()
 {
     int n,i,temp;
+    char ch[1001];
     while(scanf("%d",&n) != EOF)
     {
-        char ch[6] = gets();
         while(n--)
         {
             temp = 0;
