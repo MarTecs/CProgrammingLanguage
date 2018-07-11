@@ -32,6 +32,7 @@
 0_0_25161937_3611.c(66) : error C2133: “d”: 未知的大小
 */
 14. 2035做完，待提交，提交了一次，直接AC
+15. 1001提交了一次，Presentation Error，因为有说followed by a blank line，所以printf("%d\n\n",sum);之前是printf("%d\n",sum);
 
 ## 待解决
 
