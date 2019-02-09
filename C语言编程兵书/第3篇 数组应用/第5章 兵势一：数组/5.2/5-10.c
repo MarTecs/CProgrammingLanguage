@@ -9,6 +9,7 @@ int main(void)
         {8, 9, 10, 11},
         {12, 13, 14, 15}
     };
+    
     int tmp = 0;
     int i = 0;
     int j = 0;
@@ -18,17 +19,30 @@ int main(void)
     for(i = 0; i < SIZE; ++i)
     {
         for(j = 0; j < SIZE; ++j)
-            printf("\t-4d", array[i][j]);
+            printf("\t%-4d", array[i][j]);
         printf("\n");
     }
 
     /*实现数组转置*/
     for(i = 0; i < SIZE; ++i)
-        for(j =  i + 1; j < count; i++)
+    {
+        for(j =  i + 1; j < SIZE; ++j)
         {
-            /* code */
+            /*交换两元素*/
+            tmp = array[j][i];
+            array[j][i] = array[i][j];
+            array[i][j] = tmp;
         }
-        
-        
-        
+    }
+
+    /*打印二维数组*/
+    printf("\nFinal array:\n");
+    for(i = 0; i < SIZE; ++i)
+    {
+        for(j = 0; j < SIZE; ++j)
+            printf("\t%-4d", array[i][j]);
+        printf("\n");
+    }
+    
+    return 0;  
 }
