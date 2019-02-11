@@ -10,5 +10,4 @@ int main()
     
     printf("s1 = %d, s2 = %d", s1, s2);
     return 0;
-    
 }
