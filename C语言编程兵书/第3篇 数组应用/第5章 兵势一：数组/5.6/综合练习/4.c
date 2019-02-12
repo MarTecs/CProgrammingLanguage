@@ -12,13 +12,13 @@ void main()
         {11,12,13,14,15,16},
         {17,18,19,20,21,22}
     };
-    int array[3][6];
-    
+    int array[3][6] = {0};
+
     for(int i = 0; i < 3; i++)
     {
         for(int j = 0; j < 6; j++)
         {
-            array[i][j] = 
+            array[i][j] += array1[i][j] * array2[i][0];
         }
     }
 
